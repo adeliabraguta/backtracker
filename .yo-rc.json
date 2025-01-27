@@ -5,7 +5,7 @@
     "baseName": "backtracker",
     "buildTool": "maven",
     "cacheProvider": "no",
-    "clientFramework": "angular",
+    "clientFramework": "no",
     "clientTestFrameworks": [],
     "clientTheme": "none",
     "creationTimestamp": 1737966962609,
