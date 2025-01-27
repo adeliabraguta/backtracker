@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "backtracker",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "clientFramework": "angular",
+    "clientTestFrameworks": [],
+    "clientTheme": "none",
+    "creationTimestamp": 1737966962609,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "enableHibernateCache": null,
+    "enableTranslation": true,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "8.8.0",
+    "jwtSecretKey": "NjRkMTY2ODZmNGI0YWI1MjRhN2VkN2ZkNzhhZWI1YjQ3MGJmY2VjZGQ2YjdhNTAyMzVjY2Q3OTVjNmVjNmMyMjdhOWY3NTY4OWU5YzRlZjYyZThjYWFkZTk2NTBlODkzYjllYzZlZmVmNDkwYjViMzY4NmIwYjNhYjgyZjYwZTY=",
+    "languages": ["ro", "en", "ru"],
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "ro",
+    "packageName": "com.esempla.backtracker",
+    "prodDatabaseType": "postgresql",
+    "reactive": false,
+    "serverPort": null,
+    "serviceDiscoveryType": null,
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": true
+  }
+}
