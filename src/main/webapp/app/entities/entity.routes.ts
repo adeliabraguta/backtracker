@@ -6,7 +6,11 @@ const routes: Routes = [
     data: { pageTitle: 'backtrackerApp.adminAuthority.home.title' },
     loadChildren: () => import('./admin/authority/authority.routes'),
   },
-  /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
+  {
+    path: 'projects',
+    loadComponent: () => import('./projects-management/table/projects-management.component'),
+    // title: 'projects.title',
+  },
 ];
 
 export default routes;
