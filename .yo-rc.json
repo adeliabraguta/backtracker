@@ -18,6 +18,7 @@
     "jhipsterVersion": "8.8.0",
     "jwtSecretKey": "NjRkMTY2ODZmNGI0YWI1MjRhN2VkN2ZkNzhhZWI1YjQ3MGJmY2VjZGQ2YjdhNTAyMzVjY2Q3OTVjNmVjNmMyMjdhOWY3NTY4OWU5YzRlZjYyZThjYWFkZTk2NTBlODkzYjllYzZlZmVmNDkwYjViMzY4NmIwYjNhYjgyZjYwZTY=",
     "languages": ["ro", "en", "ru"],
+    "lastLiquibaseTimestamp": 1737971997000,
     "microfrontend": null,
     "microfrontends": [],
     "nativeLanguage": "ro",
@@ -26,6 +27,7 @@
     "reactive": false,
     "serverPort": null,
     "serviceDiscoveryType": null,
+    "skipClient": true,
     "syncUserWithIdp": null,
     "testFrameworks": [],
     "withAdminUi": true
