@@ -36,7 +36,12 @@ export default tseslint.config(
         project: ['./tsconfig.app.json', './tsconfig.spec.json'],
       },
     },
-    processor: angular.processInlineTemplates,
+    processor: {
+      meta: {
+        name: 'extract-inline-html',
+      },
+      ...angular.processInlineTemplates,
+    },
     rules: {
       '@angular-eslint/component-selector': [
         'error',
@@ -95,6 +100,14 @@ export default tseslint.config(
       '@typescript-eslint/prefer-optional-chain': 'error',
       '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }],
       '@typescript-eslint/unbound-method': 'off',
+      '@typescript-eslint/no-redundant-type-constituents': 'off',
+      '@typescript-eslint/no-inferrable-types': 'off',
+      '@typescript-eslint/no-base-to-string': 'off',
+      '@typescript-eslint/restrict-plus-operands': 'off',
+      '@typescript-eslint/no-unsafe-enum-comparison': 'off',
+      '@typescript-eslint/consistent-indexed-object-style': 'off',
+      '@typescript-eslint/no-unnecessary-template-expression': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
       'arrow-body-style': 'error',
       curly: 'error',
       eqeqeq: ['error', 'always', { null: 'ignore' }],
@@ -109,6 +122,12 @@ export default tseslint.config(
       'object-shorthand': ['error', 'always', { avoidExplicitReturnArrows: true }],
       radix: 'error',
       'spaced-comment': ['warn', 'always'],
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
     },
   },
   {
