@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'new',
     loadComponent: () => import('./projects-management/update/project-management-update.component'),
   },
+  {
+    path: 'detail/:id',
+    loadComponent: () => import('./projects-management/detail/project-management-detail.component'),
+  },
 ];
 
 export default routes;
