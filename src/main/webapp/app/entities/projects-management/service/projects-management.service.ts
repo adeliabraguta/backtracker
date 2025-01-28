@@ -20,4 +20,16 @@ export class ProjectsManagementService {
   delete(param: number | null): Observable<{}> {
     return this.http.delete(`${this.url}/${param}`);
   }
+
+  update({ param, body }: { param: number | null; body: IProject }): Observable<{}> {
+    return this.http.put(`${this.url}/${param}`, body);
+  }
+
+  find(param: number | null): Observable<{}> {
+    return this.http.get(`${this.url}/${param}`);
+  }
+
+  create(body: IProject): Observable<{}> {
+    return this.http.post<IProject>(this.url, body);
+  }
 }

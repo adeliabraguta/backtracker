@@ -9,7 +9,14 @@ const routes: Routes = [
   {
     path: 'projects',
     loadComponent: () => import('./projects-management/table/projects-management.component'),
-    // title: 'projects.title',
+  },
+  {
+    path: 'update/:id',
+    loadComponent: () => import('./projects-management/update/project-management-update.component'),
+  },
+  {
+    path: 'new',
+    loadComponent: () => import('./projects-management/update/project-management-update.component'),
   },
 ];
 
