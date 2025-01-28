@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectManagementUpdateComponent } from './project-management-update.component';
+import ProjectManagementUpdateComponent from './project-management-update.component';
 
 describe('ProjectManagementUpdateComponent', () => {
   let component: ProjectManagementUpdateComponent;
@@ -8,9 +8,8 @@ describe('ProjectManagementUpdateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProjectManagementUpdateComponent]
-    })
-    .compileComponents();
+      imports: [ProjectManagementUpdateComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectManagementUpdateComponent);
     component = fixture.componentInstance;
