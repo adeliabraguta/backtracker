@@ -2,10 +2,11 @@ import { Component, inject, signal, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { IProject } from '../projects-management.model';
 import { ProjectsManagementService } from '../service/projects-management.service';
+import SharedModule from '../../../shared/shared.module';
 
 @Component({
   selector: 'jhi-detail',
-  imports: [RouterModule],
+  imports: [RouterModule, SharedModule],
   templateUrl: './project-management-detail.component.html',
 })
 export default class ProjectManagementDetailComponent implements OnInit {

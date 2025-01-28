@@ -2,10 +2,11 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProjectsManagementService } from '../service/projects-management.service';
 import { ActivatedRoute } from '@angular/router';
+import SharedModule from '../../../shared/shared.module';
 
 @Component({
   selector: 'jhi-update',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, SharedModule],
   templateUrl: './project-management-update.component.html',
 })
 export default class ProjectManagementUpdateComponent implements OnInit {

@@ -1,23 +1,18 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <form name="editForm" novalidate (ngSubmit)="handleForm()" [formGroup]="editForm">
-      <h2 id="myUserLabel" jhiTranslate="userManagement.home.createOrEditLabel">Creare sau editare utilizator</h2>
-      <div class="mb-3" [hidden]="!editForm.value.id">
-        <label class="form-label" for="field_id" jhiTranslate="global.field.id">ID</label>
-        <input type="text" id="field_id" class="form-control" name="id" formControlName="id" readonly />
-      </div>
-
+      <h2 id="myUserLabel" jhiTranslate="projectManagement.home.createOrEditLabel">Creare sau editare proiect</h2>
       <div class="mb-3">
         <label class="form-label" for="field_name" jhiTranslate="userManagement.login">Nume</label>
         <input type="text" id="field_name" class="form-control" name="name" formControlName="name" />
       </div>
 
       <button type="button" class="btn btn-secondary" (click)="previousState()">
-        <span>Anulare</span>
+        <span jhiTranslate="entity.action.cancel">Anulare</span>
       </button>
 
       <button type="submit" class="btn btn-primary">
-        <span >Salvare</span>
+        <span jhiTranslate="entity.action.save">Salvare</span>
       </button>
     </form>
   </div>

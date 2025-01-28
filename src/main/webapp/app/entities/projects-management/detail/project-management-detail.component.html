@@ -3,14 +3,14 @@
     @if (project(); as project) {
       <div>
         <h2>
-          <span jhiTranslate="userManagement.detail.title">Project</span> [<strong>{{ project.name }}</strong
+          <span jhiTranslate="projectManagement.detail.title">Proiect</span> [<strong>{{ project.name }}</strong
         >]
         </h2>
 
         <dl class="row-md jh-entity-details">
-          <dt><span jhiTranslate="userManagement.login">ID</span></dt>
+          <dt><span>ID</span></dt>
           <dd>{{ project.id }}</dd>
-          <dt><span jhiTranslate="userManagement.login">Nume</span></dt>
+          <dt><span jhiTranslate="projectManagement.name">Nume</span></dt>
           <dd>{{ project.name }}</dd>
         </dl>
 

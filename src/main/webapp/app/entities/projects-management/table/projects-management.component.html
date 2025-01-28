@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-end">
     <button class="btn btn-primary jh-create-entity" [routerLink]="['/new']">
       <fa-icon icon="plus"></fa-icon>
-      <span>Creare utilizator nou</span>
+      <span jhiTranslate="projectManagement.home.createLabel">Creare proiect nou</span>
     </button>
   </div>
   @if (projects()) {
@@ -11,7 +11,7 @@
         <thead>
         <tr>
           <th scope="col"><span>ID</span></th>
-          <th scope="col"><span>Nume</span></th>
+          <th scope="col"><span jhiTranslate="projectManagement.name">Nume</span></th>
           <th scope="col"></th>
         </tr>
         </thead>
@@ -26,7 +26,7 @@
                 <div class="btn-group">
                   <button type="submit" [routerLink]="['/detail', project.id]" queryParamsHandling="merge" class="btn btn-info btn-sm">
                     <fa-icon icon="eye"></fa-icon>
-                    <span class="d-none d-md-inline">Vizualizare</span>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Vizualizare</span>
                   </button>
 
                   <button
@@ -36,13 +36,13 @@
                     queryParamsHandling="merge"
                   >
                     <fa-icon icon="pencil-alt"></fa-icon>
-                    <span class="d-none d-md-inline">Editare</span>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editare</span>
                   </button>
 
-                  <button type="button" class="btn btn-danger btn-sm" (click)="deleteProjects(project.id ?? null)"
+                  <button type="button" class="btn btn-danger btn-sm" (click)="deleteProjects(project)"
                   >
                     <fa-icon icon="times"></fa-icon>
-                    <span class="d-none d-md-inline">Ștergere</span>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Ștergere</span>
                   </button>
                 </div>
               </td>
