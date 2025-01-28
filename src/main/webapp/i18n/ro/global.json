@@ -11,7 +11,8 @@
         "label": "Etichetă",
         "operation": "Operație",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "adminAuthority": "Authority"
+        "adminAuthority": "Authority",
+        "projects": "Proiecte"
       },
       "account": {
         "main": "Cont",

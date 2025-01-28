@@ -1,0 +1,16 @@
+{
+  "projectManagement": {
+    "home": {
+      "title": "Projects",
+      "createLabel": "Create a new project",
+      "createOrEditLabel": "Create or edit a project"
+    },
+    "delete": {
+      "question": "Are you sure you want to delete project {{ project }}?"
+    },
+    "detail": {
+      "title": "Project"
+    },
+    "name": "Name"
+  }
+}

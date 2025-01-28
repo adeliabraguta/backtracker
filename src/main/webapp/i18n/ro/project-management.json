@@ -1,0 +1,16 @@
+{
+  "projectManagement": {
+    "home": {
+      "title": "Proiecte",
+      "createLabel": "Creeare proiect nou",
+      "createOrEditLabel": "Creeare sau editare proiect"
+    },
+    "delete": {
+      "question": "Sunteți sigur că doriți să stergeți proiectul {{ project }}?"
+    },
+    "detail": {
+      "title": "Proiect"
+    },
+    "name": "Nume"
+  }
+}
