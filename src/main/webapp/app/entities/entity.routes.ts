@@ -11,6 +11,11 @@ const routes: Routes = [
     loadChildren: () => import('./projects-management/projects-management.route'),
     title: 'projectManagement.home.title',
   },
+  {
+    path: 'labels-management',
+    loadChildren: () => import('./labels-management/labels-management.route'),
+    title: 'projectManagement.home.title',
+  },
 ];
 
 export default routes;
