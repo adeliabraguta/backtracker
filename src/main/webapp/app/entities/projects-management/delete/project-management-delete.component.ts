@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ProjectsManagementService } from '../service/projects-management.service';
+import { EntitiesService } from '../../service/entities.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Project } from '../projects-management.model';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,7 @@ import SharedModule from '../../../shared/shared.module';
 export class ProjectManagementDeleteComponent {
   project?: Project;
 
-  private readonly projectService = inject(ProjectsManagementService);
+  private readonly projectService = inject(EntitiesService);
   private readonly activeModal = inject(NgbActiveModal);
 
   cancel(): void {
@@ -22,6 +22,6 @@ export class ProjectManagementDeleteComponent {
   }
 
   delete(id: number): void {
-    this.projectService.delete(id).subscribe(() => this.activeModal.close('deleted'));
+    this.projectService.delete('projects', id).subscribe(() => this.activeModal.close('deleted'));
   }
 }

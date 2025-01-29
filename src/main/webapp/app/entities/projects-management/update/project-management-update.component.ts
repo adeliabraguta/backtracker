@@ -1,6 +1,6 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProjectsManagementService } from '../service/projects-management.service';
+import { EntitiesService } from '../../service/entities.service';
 import { ActivatedRoute } from '@angular/router';
 import SharedModule from '../../../shared/shared.module';
 
@@ -18,11 +18,11 @@ export default class ProjectManagementUpdateComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly projectId = this.route.snapshot.paramMap.get('id');
 
-  private readonly projectsService = inject(ProjectsManagementService);
+  private readonly projectsService = inject(EntitiesService);
 
   ngOnInit(): void {
     if (this.projectId) {
-      this.projectsService.find(+this.projectId).subscribe(res => {
+      this.projectsService.find('projects', +this.projectId).subscribe(res => {
         this.editForm.reset(res);
       });
     } else {
@@ -37,9 +37,9 @@ export default class ProjectManagementUpdateComponent implements OnInit {
   handleForm(): void {
     const project = this.editForm.getRawValue();
     if (this.projectId) {
-      this.projectsService.update({ param: project.id, body: project }).subscribe(() => this.previousState());
+      this.projectsService.update('projects', { param: project.id, body: project }).subscribe(() => this.previousState());
     } else {
-      this.projectsService.create(project).subscribe(() => this.previousState());
+      this.projectsService.create('projects', project).subscribe(() => this.previousState());
     }
   }
 }

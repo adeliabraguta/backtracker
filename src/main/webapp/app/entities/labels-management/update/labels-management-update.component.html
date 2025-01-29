@@ -1,1 +1,19 @@
-<p>labels-management-update works!</p>
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="handleForm()" [formGroup]="editForm">
+      <h2 id="myUserLabel" jhiTranslate="labelsManagement.home.createOrEditLabel">Creare sau editare eticheta</h2>
+      <div class="mb-3">
+        <label class="form-label" for="field_name" jhiTranslate="labelsManagement.name">Nume</label>
+        <input type="text" id="field_name" class="form-control" name="name" formControlName="label" />
+      </div>
+
+      <button type="button" class="btn btn-secondary" (click)="previousState()">
+        <span jhiTranslate="entity.action.cancel">Anulare</span>
+      </button>
+
+      <button type="submit" class="btn btn-primary">
+        <span jhiTranslate="entity.action.save">Salvare</span>
+      </button>
+    </form>
+  </div>
+</div>

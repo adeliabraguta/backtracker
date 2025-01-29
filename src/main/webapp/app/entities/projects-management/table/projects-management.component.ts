@@ -1,9 +1,8 @@
 import { Component, inject, signal, OnInit } from '@angular/core';
-import { DatePipe } from '@angular/common';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import SharedModule from '../../../shared/shared.module';
 import { IProject } from '../projects-management.model';
-import { ProjectsManagementService } from '../service/projects-management.service';
+import { EntitiesService } from '../../service/entities.service';
 import { RouterModule } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProjectManagementDeleteComponent } from '../delete/project-management-delete.component';
@@ -15,7 +14,7 @@ import { ProjectManagementDeleteComponent } from '../delete/project-management-d
 })
 export default class ProjectsManagementComponent implements OnInit {
   projects = signal<IProject[] | null>(null);
-  projectService = inject(ProjectsManagementService);
+  projectService = inject(EntitiesService);
   private readonly modalService = inject(NgbModal);
 
   ngOnInit(): void {
@@ -23,9 +22,9 @@ export default class ProjectsManagementComponent implements OnInit {
   }
 
   loadProjects(): void {
-    this.projectService.query().subscribe({
+    this.projectService.query('projects').subscribe({
       next: res => {
-        this.projects.set(res);
+        this.projects.set(res as IProject[]);
       },
       error(err) {
         throw err;

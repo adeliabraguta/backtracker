@@ -1,0 +1,16 @@
+{
+  "labelsManagement": {
+    "home": {
+      "title": "Labels",
+      "createLabel": "Create a new label",
+      "createOrEditLabel": "Create or edit a label"
+    },
+    "delete": {
+      "question": "Are you sure you want to delete label {{ label }}?"
+    },
+    "detail": {
+      "title": "Label"
+    },
+    "name": "Name"
+  }
+}
