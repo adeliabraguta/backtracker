@@ -1,7 +1,7 @@
 import { Component, inject, signal, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { IProject } from '../projects-management.model';
-import { ProjectsManagementService } from '../service/projects-management.service';
+import { EntitiesService } from '../../service/entities.service';
 import SharedModule from '../../../shared/shared.module';
 
 @Component({
@@ -13,11 +13,11 @@ export default class ProjectManagementDetailComponent implements OnInit {
   project = signal<IProject | null>(null);
   private readonly route = inject(ActivatedRoute);
   private readonly projectId = this.route.snapshot.paramMap.get('id');
-  private readonly projectsService = inject(ProjectsManagementService);
+  private readonly projectsService = inject(EntitiesService);
 
   ngOnInit(): void {
     if (this.projectId) {
-      this.projectsService.find(+this.projectId).subscribe(res => this.project.set(res as IProject));
+      this.projectsService.find('projects', +this.projectId).subscribe(res => this.project.set(res as IProject));
     }
   }
 

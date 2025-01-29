@@ -1,20 +1,19 @@
 import { Component, inject } from '@angular/core';
 import { EntitiesService } from '../../service/entities.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Project } from '../projects-management.model';
 import { FormsModule } from '@angular/forms';
 import SharedModule from '../../../shared/shared.module';
+import { Label } from '../labels-management.model';
 
 @Component({
   selector: 'jhi-delete',
   imports: [FormsModule, SharedModule],
-  templateUrl: './project-management-delete.component.html',
-  styleUrl: './project-management-delete.component.scss',
+  templateUrl: './labels-management-delete.component.html',
 })
-export class ProjectManagementDeleteComponent {
-  project?: Project;
+export default class LabelsManagementDeleteComponent {
+  label?: Label;
 
-  private readonly projectService = inject(EntitiesService);
+  private readonly entitiesService = inject(EntitiesService);
   private readonly activeModal = inject(NgbActiveModal);
 
   cancel(): void {
@@ -22,6 +21,6 @@ export class ProjectManagementDeleteComponent {
   }
 
   delete(id: number): void {
-    this.projectService.delete('projects', id).subscribe(() => this.activeModal.close('deleted'));
+    this.entitiesService.delete('labels', id).subscribe(() => this.activeModal.close('deleted'));
   }
 }

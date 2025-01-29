@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (label(); as label) {
+      <div>
+        <h2>
+          <span jhiTranslate="labelsManagement.detail.title">Eticheta</span> [<strong>{{ label.label }}</strong
+        >]
+        </h2>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>{{ label.id }}</dd>
+          <dt><span jhiTranslate="labelsManagement.name">Nume</span></dt>
+          <dd>{{ label.label }}</dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info">
+          <span jhiTranslate="entity.action.back">Înapoi</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

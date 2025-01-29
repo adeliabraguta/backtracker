@@ -1,0 +1,16 @@
+{
+  "labelsManagement": {
+    "home": {
+      "title": "Etichete",
+      "createLabel": "Creeare eticheta nou",
+      "createOrEditLabel": "Creeare sau editare eticheta"
+    },
+    "delete": {
+      "question": "Sunteți sigur că doriți să stergeți eticheta {{ label }}?"
+    },
+    "detail": {
+      "title": "Eticheta"
+    },
+    "name": "Nume"
+  }
+}

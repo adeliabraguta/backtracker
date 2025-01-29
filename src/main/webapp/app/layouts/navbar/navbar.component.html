@@ -47,7 +47,7 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/projects"
+                  routerLink="/project-management"
                   routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }"
                   (click)="collapseNavbar()"
@@ -55,6 +55,19 @@
                   <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
                   <span jhiTranslate="global.menu.entities.projects">
                   Proiecte</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/labels-management"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="collapseNavbar()"
+                >
+                  <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                  <span jhiTranslate="global.menu.entities.labels">
+                  Etichete</span>
                 </a>
               </li>
             </ul>

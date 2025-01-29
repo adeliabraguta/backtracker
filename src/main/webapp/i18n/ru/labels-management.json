@@ -1,0 +1,16 @@
+{
+  "labelsManagement": {
+    "home": {
+      "title": "Этикетки",
+      "createLabel": "Создать новую этикетку",
+      "createOrEditLabel": "Создать или отредактировать этикетку"
+    },
+    "delete": {
+      "question": "Вы уверены, что хотите удалить этикетку {{ label }}?"
+    },
+    "detail": {
+      "title": "Этикетка"
+    },
+    "name": "Имя"
+  }
+}

@@ -9,7 +9,8 @@
         "main": "Сущности",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
         "adminAuthority": "Authority",
-        "projects": "Проекты"
+        "projects": "Проекты",
+        "labels": "Этикетки"
       },
       "account": {
         "main": "Профиль",
