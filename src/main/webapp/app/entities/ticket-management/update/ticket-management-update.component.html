@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="handleForm()" [formGroup]="editForm">
+      <h2 id="myUserLabel" jhiTranslate="ticketManagement.home.createOrEditLabel">Creare sau editare tichet</h2>
+
+      <div class="mb-3">
+        <label class="form-label" for="field_title" jhiTranslate="ticketManagement.title">Titlu</label>
+        <input type="text" id="field_title" class="form-control" name="title" formControlName="title" />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="field_description" jhiTranslate="ticketManagement.description">Descriere</label>
+        <input type="text" id="field_description" class="form-control" name="description" formControlName="description" />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="field_dueDate" jhiTranslate="ticketManagement.dueDate">Data Limita</label>
+        <input type="date" id="field_dueDate" class="form-control" name="dueDate" formControlName="dueDate" />
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label" for="done">
+          <input
+            class="form-check-input"
+            [attr.disabled]="editForm.value.id === undefined ? 'disabled' : null"
+            type="checkbox"
+            id="done"
+            name="done"
+            formControlName="done"
+          />
+          <span jhiTranslate="ticketManagement.done">Finisat</span>
+        </label>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="field_project" jhiTranslate="ticketManagement.project">Proiect</label>
+        <select class="form-control" [compareWith]="compareById" id="field_project" name="project" formControlName="project">
+          @for (project of projects(); track $index) {
+            <option [ngValue]="project">{{ project.name}}</option>
+          }
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="field_user" jhiTranslate="ticketManagement.assignedTo">Atribuit</label>
+        <select class="form-control" [compareWith]="compareById" id="field_user" name="assignedTo" formControlName="assignedTo">
+          @for (user of users(); track $index) {
+            <option [ngValue]="user">{{ user.login}}</option>
+          }
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="field_labels" jhiTranslate="ticketManagement.labels">Atribuit</label>
+        <select class="form-control" id="field_labels" [compareWith]="compareById" multiple name="labels" formControlName="labels">
+          @for (label of labels(); track $index) {
+            <option [value]="label">{{ label.label }}</option>
+          }
+        </select>
+      </div>
+
+      <button type="button" class="btn btn-secondary" (click)="previousState()">
+        <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Anulare</span>
+      </button>
+
+      <button type="submit" class="btn btn-primary">
+        <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Salvare</span>
+      </button>
+    </form>
+  </div>
+</div>

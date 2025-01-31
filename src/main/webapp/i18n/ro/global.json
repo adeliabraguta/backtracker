@@ -13,7 +13,8 @@
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
         "adminAuthority": "Authority",
         "projects": "Proiecte",
-        "labels": "Etichete"
+        "labels": "Etichete",
+        "tickets": "Tichete"
       },
       "account": {
         "main": "Cont",

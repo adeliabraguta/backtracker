@@ -1,0 +1,22 @@
+{
+  "ticketManagement": {
+    "home": {
+      "title": "Тикеты",
+      "createLabel": "Создать новый тикет",
+      "createOrEditLabel": "Создать или отредактировать тикет"
+    },
+    "delete": {
+      "question": "Вы уверены, что хотите удалить тикет {{ ticket }}?"
+    },
+    "detail": {
+      "title": "Тикет"
+    },
+    "title": "Название",
+    "description": "Описание",
+    "dueDate": "Крайний срок",
+    "done": "Готово",
+    "project": "Проект",
+    "assignedTo" : "Назначенный",
+    "labels": "Этикетки"
+  }
+}
