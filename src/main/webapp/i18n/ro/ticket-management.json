@@ -1,0 +1,22 @@
+{
+  "ticketManagement": {
+    "home": {
+      "title": "Tichete",
+      "createLabel": "Creeare tichet nou",
+      "createOrEditLabel": "Creeare sau editare tichet"
+    },
+    "delete": {
+      "question": "Sunteți sigur că doriți să stergeți tichetul {{ ticket }}?"
+    },
+    "detail": {
+      "title": "Tichet"
+    },
+    "title": "Titlu",
+    "description": "Descriere",
+    "dueDate": "Data Limita",
+    "done": "Finisat",
+    "project": "Proiect",
+    "assignedTo" : "Atribuit",
+    "labels": "Etichete"
+  }
+}

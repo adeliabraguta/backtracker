@@ -1,0 +1,22 @@
+{
+  "ticketManagement": {
+    "home": {
+      "title": "Tickets",
+      "createLabel": "Create a new ticket",
+      "createOrEditLabel": "Create or edit a ticket"
+    },
+    "delete": {
+      "question": "Are you sure you want to delete ticket {{ ticket }}?"
+    },
+    "detail": {
+      "title": "Ticket"
+    },
+    "title": "Title",
+    "description": "Description",
+    "dueDate": "Due Date",
+    "done": "Done",
+    "project": "Project",
+    "assignedTo" : "Assigned to",
+    "labels": "Labels"
+  }
+}

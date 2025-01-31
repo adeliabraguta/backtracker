@@ -14,7 +14,12 @@ const routes: Routes = [
   {
     path: 'labels-management',
     loadChildren: () => import('./labels-management/labels-management.route'),
-    title: 'projectManagement.home.title',
+    title: 'labelsManagement.home.title',
+  },
+  {
+    path: 'ticket-management',
+    loadChildren: () => import('./ticket-management/ticket-management.route'),
+    title: 'ticketManagement.home.title',
   },
 ];
 

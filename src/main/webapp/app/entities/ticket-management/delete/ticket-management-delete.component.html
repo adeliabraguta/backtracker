@@ -1,0 +1,22 @@
+@if (ticket) {
+  <form name="deleteForm"  (ngSubmit)="delete(ticket.id!)">
+    <div class="modal-header">
+      <h4 class="modal-title" jhiTranslate="entity.delete.title">Confirmați operația de ștergere</h4>
+    </div>
+
+    <div class="modal-body">
+      <p jhiTranslate="ticketManagement.delete.question" [translateValues]="{ ticket: ticket.title }">
+        Sunteți sigur că doriți să stergeți proiectul {{ ticket.title }}?
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
+        <span jhiTranslate="entity.action.cancel">Anulare</span>
+      </button>
+
+      <button type="submit" class="btn btn-danger">
+        <span jhiTranslate="entity.action.delete">Ștergere</span>
+      </button>
+    </div>
+  </form>
+}

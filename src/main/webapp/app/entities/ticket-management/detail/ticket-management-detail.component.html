@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (ticket(); as ticket) {
+      <div>
+        <h2>
+          <span jhiTranslate="ticketManagement.detail.title">Tichet</span> [<strong>{{ ticket.title }}</strong
+        >]
+        </h2>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>{{ ticket.id }}</dd>
+          <dt><span jhiTranslate="projectManagement.name">Titlu</span></dt>
+          <dd>{{ ticket.title }}</dd>
+          <dt><span jhiTranslate="projectManagement.name">Descriere</span></dt>
+          <dd>{{ ticket.description }}</dd>
+          <dt><span jhiTranslate="projectManagement.name">Data Limita</span></dt>
+          <dd>{{ ticket.dueDate }}</dd>
+          <dt><span jhiTranslate="projectManagement.name">Finisat</span></dt>
+          <dd>{{ ticket.done }}</dd>
+          <dt><span jhiTranslate="projectManagement.name">Proiect</span></dt>
+          <dd>{{ ticket.project?.name }}</dd>
+          <dt><span jhiTranslate="projectManagement.name">Atribuit</span></dt>
+          <dd>{{ ticket.assignedTo?.login }}</dd>
+          <dt><span jhiTranslate="projectManagement.name">Etichete</span></dt>
+          <dd>
+          @for (label of ticket.labels; track label.id) {
+            <span>{{ label.label }}</span>
+          }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info">
+          <span jhiTranslate="entity.action.back">Înapoi</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>
