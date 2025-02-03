@@ -1,82 +1,114 @@
-<div class="row">
-  <div class="col-md-3">
-    <span class="hipster img-fluid rounded"></span>
-  </div>
-
-  <div class="col-md-9">
-    <h1 class="display-4"><span jhiTranslate="home.title">Bun venit, Java Hipster!</span> (Backtracker)</h1>
-
-    <p class="lead" jhiTranslate="home.subtitle">Aceasta este pagina ta de start</p>
-
-    <div>
-      @if (account() !== null) {
-        <div class="alert alert-success">
-          @if (account(); as accountRef) {
-            <span id="home-logged-message" jhiTranslate="home.logged.message" [translateValues]="{ username: accountRef.login }"
-              >Ești autentificat cu numele de utilizator &quot;{{ accountRef.login }}&quot;.</span
-            >
-          }
-        </div>
-      } @else {
-        <div class="alert alert-warning">
-          <span jhiTranslate="global.messages.info.authenticated.prefix">Dacă doriți să vă </span>
-          <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">autentificați</a
-          ><span jhiTranslate="global.messages.info.authenticated.suffix"
-            >, puteți încerca conturile implicite:<br />- Administrator (login=&quot;admin&quot; și parola=&quot;admin&quot;) <br />-
-            Utilizator (login=&quot;user&quot; și parola=&quot;user&quot;).</span
-          >
-        </div>
-
-        <div class="alert alert-warning">
-          <span jhiTranslate="global.messages.info.register.noaccount">Încă nu aveți un cont?</span>&nbsp;
-          <a class="alert-link" routerLink="/account/register" jhiTranslate="global.messages.info.register.link"
-            >Înregistrați un cont nou</a
-          >
-        </div>
-      }
+<div class="container border p-3">
+  <h2 class="bg-info p-1">Creare utilizator nou</h2>
+  <div class="row pb-2">
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="idnp">IDNP</label>
+      <input class="border p-2 rounded-2" id="idnp" type="text" />
     </div>
-
-    <p jhiTranslate="home.question">Dacă ai orice întrebări în legatură cu JHipster:</p>
-
-    <ul>
-      <li>
-        <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.homepage">Pagina JHipster</a>
-      </li>
-      <li>
-        <a
-          href="https://stackoverflow.com/tags/jhipster/info"
-          target="_blank"
-          rel="noopener noreferrer"
-          jhiTranslate="home.link.stackoverflow"
-          >JHipster pe Stack Overflow</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/jhipster/generator-jhipster/issues?state=open"
-          target="_blank"
-          rel="noopener noreferrer"
-          jhiTranslate="home.link.bugtracker"
-          >JHipster bug tracker</a
-        >
-      </li>
-      <li>
-        <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.chat"
-          >Camera de chat publică pentru JHipster</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.follow"
-          >Contactează &#64;jhipster pe Twitter</a
-        >
-      </li>
-    </ul>
-
-    <p>
-      <span jhiTranslate="home.like">Dacă iți place JHipster nu uita să ne dai o stea pe</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github"
-        >GitHub</a
-      >!
-    </p>
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="prenume">Prenume</label>
+      <input class="border p-2 rounded-2" id="prenume" type="text" />
+    </div>
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="nume">Nume</label>
+      <input class="border p-2 rounded-2" id="nume" type="text" />
+    </div>
   </div>
+  <div class="row pb-2">
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="email">Email</label>
+      <input class="border p-2 rounded-2" id="email" type="email" />
+    </div>
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="tel">Numar de telefon</label>
+      <input class="border p-2 rounded-2" id="tel" type="tel" />
+    </div>
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="limba">Limba</label>
+      <input class="border p-2 rounded-2" id="limba" type="text" />
+    </div>
+  </div>
+  <div class="row pb-2">
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="access-de-la">Acces de la</label>
+      <input class="border p-2 rounded-2" id="access-de-la" type="date" />
+    </div>
+    <div class="col d-flex flex-column">
+      <label class="pb-1" for="access-pana-la">Acces pana la</label>
+      <input class="border p-2 rounded-2" id="access-pana-la" type="date" />
+    </div>
+  </div>
+  <div class="pb-2">
+    <input id="activat" type="checkbox" />
+    <label for="activat">Activat</label>
+  </div>
+  <div class="row pb-4">
+    <div class="col">
+      <label class="pb-1">Gestiune notificari</label>
+      <div class="d-flex justify-content-between border ">
+        <p class="m-0 ps-1">Notificare prin MNotify</p>
+        <div class="p-1">
+          <button class="btn btn-danger" style="box-shadow: inset 0 0 10px #92001a;">Dezactivat</button>
+          <button class="btn btn-light" style="box-shadow: inset 0 0 10px #ddd;">Activat</button>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between border">
+        <p class="m-0 ps-1">Notificare prin tablou de control</p>
+        <div class="p-1">
+          <button class="btn btn-danger" style="box-shadow: inset 0 0 10px #92001a;">Dezactivat</button>
+          <button class="btn btn-light" style="box-shadow: inset 0 0 10px #ddd;">Activat</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <label class="pb-1">Roluri</label>
+      <select class="border rounded-2 p-2 w-100">
+        <option>Selectati rolurile</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-light" style="box-shadow: inset 0 0 10px #999;">Anulare</button>
+    <button class="btn btn-info" style="box-shadow: inset 0 0 10px #999;">Salvare</button>
+  </div>
+</div>
+
+<div class="pt-5">
+  <table class="border w-100">
+    <tr>
+      <th class="border w-40 bg-info px-1">Tip actualizare</th>
+      <td class="border w-60 px-1">Profil persoana</td>
+    </tr>
+    <tr>
+      <th class="border bg-info px-1">De la</th>
+      <td class="border px-1">30.01.2025 12:24</td>
+    </tr>
+    <tr>
+      <th class="border bg-info px-1">Pana la</th>
+      <td class="border px-1">30.01.2024 12:25</td>
+    </tr>
+    <tr>
+      <th class="border bg-info px-1">Statut</th>
+      <td class="border px-1">Finalizat</td>
+    </tr>
+    <tr>
+      <th class="border bg-info px-1">Total</th>
+      <td class="border px-1">10</td>
+    </tr>
+    <tr>
+      <th class="border bg-info px-1">Succese</th>
+      <td class="border px-1">9</td>
+    </tr>
+    <tr>
+      <th class="border bg-info px-1">Esuate</th>
+      <td class="border px-1">1</td>
+    </tr>
+    <tr>
+      <th class="border bg-info px-1">Ultima actualizare</th>
+      <td class="border px-1">30.01.2025 12:25</td>
+    </tr>
+  </table>
 </div>
