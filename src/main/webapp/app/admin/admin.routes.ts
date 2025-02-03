@@ -4,8 +4,19 @@ import { Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'user-management',
+    loadComponent: () => import('./user-management/list/user-management.component'),
+    data: {
+      defaultSort: 'id,asc',
+      breadcrumb: 'Users',
+    },
+  },
+  {
+    path: 'user-management',
     loadChildren: () => import('./user-management/user-management.route'),
     title: 'userManagement.home.title',
+    data: {
+      breadcrumb: 'Users',
+    },
   },
   {
     path: 'docs',

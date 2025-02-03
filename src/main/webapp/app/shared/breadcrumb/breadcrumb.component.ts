@@ -1,6 +1,6 @@
 import { Component, effect, inject, OnInit, signal } from '@angular/core';
 import { BreadcrumbService } from './service/breadcrumb.service';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,10 +13,9 @@ export class BreadcrumbComponent implements OnInit {
   breadcrumbs = signal<{ label: string; url: string }[]>([]);
   private readonly breadcrumbService = inject(BreadcrumbService);
 
-  constructor() {
-    effect(() => {
-      // eslint-disable-next-line no-console
-      console.log('ada', this.breadcrumbs());
+  constructor(private router: Router) {
+    router.events.subscribe(val => {
+      this.breadcrumbs.set(this.breadcrumbService.breadcrumbs);
     });
   }
   ngOnInit(): void {

@@ -1,13 +1,11 @@
 import { Component, inject, signal, OnInit } from '@angular/core';
-import { IProject } from '../../projects-management/projects-management.model';
 import { ActivatedRoute } from '@angular/router';
 import { EntitiesService } from '../../service/entities.service';
 import { ITicket } from '../ticket-management-model';
-import { BreadcrumbComponent } from '../../../shared/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'jhi-detail',
-  imports: [BreadcrumbComponent],
+  imports: [],
   templateUrl: './ticket-management-detail.component.html',
   styleUrl: './ticket-management-detail.component.scss',
 })
