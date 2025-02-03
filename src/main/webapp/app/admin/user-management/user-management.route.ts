@@ -15,17 +15,13 @@ export const userManagementResolve: ResolveFn<IUser | null> = (route: ActivatedR
 
 const userManagementRoute: Routes = [
   {
-    path: '',
-    loadComponent: () => import('./list/user-management.component'),
-    data: {
-      defaultSort: 'id,asc',
-    },
-  },
-  {
     path: ':login/view',
     loadComponent: () => import('./detail/user-management-detail.component'),
     resolve: {
       user: userManagementResolve,
+    },
+    data: {
+      breadcrumb: 'User Details',
     },
   },
   {
@@ -34,12 +30,18 @@ const userManagementRoute: Routes = [
     resolve: {
       user: userManagementResolve,
     },
+    data: {
+      breadcrumb: 'Create User',
+    },
   },
   {
     path: ':login/edit',
     loadComponent: () => import('./update/user-management-update.component'),
     resolve: {
       user: userManagementResolve,
+    },
+    data: {
+      breadcrumb: 'Edit User',
     },
   },
 ];

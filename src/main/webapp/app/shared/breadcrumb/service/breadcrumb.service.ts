@@ -17,21 +17,16 @@ export class BreadcrumbService {
   }
   private createBreadcrumbs(
     route: ActivatedRoute,
-    url: string = '',
+    url: string = '/',
     breadcrumbs: { label: string; url: string }[] = [],
   ): { label: string; url: string }[] {
     const children: ActivatedRoute[] = route.children;
 
-    if (children.length === 0) {
-      return breadcrumbs;
-    }
-
     for (const child of children) {
       const routeURL: string = child.snapshot.url.map(segment => segment.path).join('/');
       if (routeURL !== '') {
-        url += `/${routeURL}`;
+        url += `${routeURL}/`;
       }
-
       breadcrumbs.push({ label: child.snapshot.data['breadcrumb'], url });
       return this.createBreadcrumbs(child, url, breadcrumbs);
     }

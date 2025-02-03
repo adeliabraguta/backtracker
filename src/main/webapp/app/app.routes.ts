@@ -10,6 +10,9 @@ const routes: Routes = [
     path: '',
     loadComponent: () => import('./home/home.component'),
     title: 'home.title',
+    data: {
+      breadcrumb: 'Home',
+    },
   },
   {
     path: '',
@@ -20,6 +23,7 @@ const routes: Routes = [
     path: 'admin',
     data: {
       authorities: [Authority.ADMIN],
+      breadcrumb: 'Home',
     },
     canActivate: [UserRouteAccessService],
     loadChildren: () => import('./admin/admin.routes'),
