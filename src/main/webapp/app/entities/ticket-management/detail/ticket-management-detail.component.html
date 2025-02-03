@@ -7,30 +7,46 @@
         >]
         </h2>
 
-        <dl class="row-md jh-entity-details">
-          <dt><span>ID</span></dt>
-          <dd>{{ ticket.id }}</dd>
-          <dt><span jhiTranslate="projectManagement.name">Titlu</span></dt>
-          <dd>{{ ticket.title }}</dd>
-          <dt><span jhiTranslate="projectManagement.name">Descriere</span></dt>
-          <dd>{{ ticket.description }}</dd>
-          <dt><span jhiTranslate="projectManagement.name">Data Limita</span></dt>
-          <dd>{{ ticket.dueDate }}</dd>
-          <dt><span jhiTranslate="projectManagement.name">Finisat</span></dt>
-          <dd>{{ ticket.done }}</dd>
-          <dt><span jhiTranslate="projectManagement.name">Proiect</span></dt>
-          <dd>{{ ticket.project?.name }}</dd>
-          <dt><span jhiTranslate="projectManagement.name">Atribuit</span></dt>
-          <dd>{{ ticket.assignedTo?.login }}</dd>
-          <dt><span jhiTranslate="projectManagement.name">Etichete</span></dt>
-          <dd>
-          @for (label of ticket.labels; track label.id) {
-            <span>{{ label.label }}</span>
-          }
-          </dd>
-        </dl>
+        <table class="border w-100">
+          <tr>
+            <th class="border w-40"><span>ID</span></th>
+            <td class="border w-60">{{ ticket.id }}</td>
+          </tr>
+          <tr>
+            <th class="border"><span jhiTranslate="projectManagement.name">Titlu</span></th>
+            <td class="border">{{ ticket.title }}</td>
+          </tr>
+          <tr>
+            <th class="border"><span jhiTranslate="projectManagement.name">Descriere</span></th>
+            <td class="border">{{ ticket.description }}</td>
+          </tr>
+          <tr>
+            <th class="border"><span jhiTranslate="projectManagement.name">Data Limita</span></th>
+            <td class="border">{{ ticket.dueDate }}</td>
+          </tr>
+          <tr>
+            <th class="border"><span jhiTranslate="projectManagement.name">Finisat</span></th>
+            <td class="border">{{ ticket.done }}</td>
+          </tr>
+          <tr>
+            <th class="border"><span jhiTranslate="projectManagement.name">Proiect</span></th>
+            <td class="border">{{ ticket.project?.name }}</td>
+          </tr>
+          <tr>
+            <th class="border"><span jhiTranslate="projectManagement.name">Atribuit</span></th>
+            <td class="border">{{ ticket.assignedTo?.login }}</td>
+          </tr>
+          <tr>
+            <th class="border"><span jhiTranslate="projectManagement.name">Etichete</span></th>
+            <td class="border">
+              @for (label of ticket.labels; track label.id) {
+                <span>{{ label.label }}</span>
+              }
+            </td>
+          </tr>
+        </table>
 
-        <button type="submit" (click)="previousState()" class="btn btn-info">
+        <button type="submit" (click)="previousState()" class="btn btn-info mt-4">
           <span jhiTranslate="entity.action.back">Înapoi</span>
         </button>
       </div>
