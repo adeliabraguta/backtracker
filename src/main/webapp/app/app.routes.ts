@@ -36,6 +36,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import(`./entities/entity.routes`),
+    data: {
+      breadcrumb: 'Home',
+    },
   },
   ...errorRoute,
 ];

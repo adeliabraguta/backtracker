@@ -11,10 +11,11 @@ import { combineLatest } from 'rxjs';
 import { SORT } from '../../../config/navigation.constants';
 import { ItemCountComponent } from '../../../shared/pagination';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { BreadcrumbComponent } from '../../../shared/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'jhi-ticket-management.json',
-  imports: [RouterModule, SharedModule, SortDirective, SortByDirective, ItemCountComponent],
+  imports: [RouterModule, SharedModule, SortDirective, SortByDirective, ItemCountComponent, BreadcrumbComponent],
   templateUrl: './ticket-management.component.html',
   styleUrl: './ticket-management.component.scss',
 })

@@ -18,8 +18,18 @@ const routes: Routes = [
   },
   {
     path: 'ticket-management',
+    loadComponent: () => import('./ticket-management/table/ticket-management.component'),
+    data: {
+      breadcrumb: 'Tickets',
+    },
+  },
+  {
+    path: 'ticket-management',
     loadChildren: () => import('./ticket-management/ticket-management.route'),
     title: 'ticketManagement.home.title',
+    data: {
+      breadcrumb: 'Tickets',
+    },
   },
 ];
 
